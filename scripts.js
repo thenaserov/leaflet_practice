@@ -5,6 +5,8 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 
+
+// tutorial 2
 var LeafIcon = L.Icon.extend({
     options: {
         shadowUrl: 'leaf-shadow.png',
@@ -30,3 +32,8 @@ L.icon = function (options) {
 L.marker([51.5, -0.09], {icon: greenIcon}).addTo(map).bindPopup("I am a green leaf.");
 L.marker([51.495, -0.083], {icon: redIcon}).addTo(map).bindPopup("I am a red leaf.");
 L.marker([51.49, -0.1], {icon: orangeIcon}).addTo(map).bindPopup("I am an orange leaf.");
+
+// tutorial 3
+var marker = L.marker([50.4501, 30.5234],
+    {alt: 'Kyiv'}).addTo(map) // "Kyiv" is the accessible name of this marker
+    .bindPopup('Kyiv, Ukraine is the birthplace of Leaflet!');
