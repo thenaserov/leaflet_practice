@@ -187,3 +187,67 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 //         return feature.properties.show_on_map;
 //     }
 // }).addTo(map);
+
+
+
+
+// ali wms
+
+var COMMENTS_layer = L.tileLayer.wms("http://localhost:8080/geoserver/Ilam_workspace/wms", {
+    layers: 'Ilam_workspace:COMMENTS',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "states"
+
+});
+
+// COMMENTS_layer.addTo(map)
+
+var Ov_HdMVL_layer = L.tileLayer.wms("http://localhost:8080/geoserver/Ilam_workspace/wms", {
+    layers: 'Ilam_workspace:Ov_HdMVL',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "states"
+
+});
+
+// Ov_HdMVL_layer.addTo(map)
+
+
+var recloser_layer = L.tileLayer.wms("http://localhost:8080/geoserver/Ilam_workspace/wms", {
+    layers: 'Ilam_workspace:recloser',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "states"
+
+});
+
+
+// var recloser_layer = L.layerGroup([recloser_layer]);
+// var Ov_HdMVL_layer = L.layerGroup([Ov_HdMVL_layer]);
+// var COMMENTS_layer = L.layerGroup([COMMENTS_layer]);
+
+var overlayMaps = {
+    "recloser_layer": recloser_layer,
+    "Ov_HdMVL_layer": Ov_HdMVL_layer,
+    "COMMENTS_layer": COMMENTS_layer
+};
+
+// var layerControl = L.control.layers(overlayMaps).addTo(map);
+
+// var recloser_layer = L.layerGroup([recloser_layer]);
+// var Ov_HdMVL_layer = L.layerGroup([Ov_HdMVL_layer]);
+// var COMMENTS_layer = L.layerGroup([COMMENTS_layer]);
+
+// layerControl.addOverlay(recloser_layer, "Recloser");
+// layerControl.addOverlay(Ov_HdMVL_layer, "Ov_HdMVL");
+// layerControl.addOverlay(COMMENTS_layer, "COMMENTS");
+
+// L.control.addOverlay(overlayMaps).addTo(map);
+
+
+// recloser_layer.addTo(map)
+// Ov_HdMVL_layer.addTo(map)
